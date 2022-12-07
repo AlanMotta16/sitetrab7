@@ -1,0 +1,119 @@
+/*page 4*/
+.pg4{
+    font-size:large;
+    background-image:url(../imgs/vdgbackground.jpg);
+}
+.gamlst{
+    padding:25px;
+    border:2px solid rgba(0, 0, 0, 0);
+}
+.list{
+    text-align:center;
+    list-style:none;
+}
+.xbex, .psex, .ntex, .mtpl{
+    padding:5px;
+    margin-top:10px;
+}
+.xbex{
+    background-image:linear-gradient(90deg, rgb(182, 255, 182), green);
+}
+.psex{
+    background-image:linear-gradient(90deg, rgb(211, 223, 254), rgb(1, 57, 197));
+}
+.ntex{
+    background-image:linear-gradient(90deg, rgb(89, 213, 255), red);
+}
+.mtpl{
+    background-image: linear-gradient(90deg, rgb(172, 172, 199), rgb(14, 31, 91));
+}
+.gmlsit{
+    padding:5px;
+    border:1px solid black;
+    border-radius:20px;
+    margin:5px;
+    color:white;
+    text-align:center;
+    background-image:url(../imgs/vdgbackground.jpg);
+    background-size:contain;
+}
+.pagetitle{
+    grid-area:pagetitle;
+}
+.pagedescrlg{
+    grid-area:pagedescr;
+}
+.gl1{
+    grid-area:gl1;
+}
+.gl2{
+    grid-area:gl2;
+}
+.listcont{
+    display:grid;
+    grid-template-areas:
+    "pagetitle"
+    "pagedescr"
+    "gl1"
+    "gl2"
+}
+@media (min-width:700px){
+    .listcont{
+        display:grid;
+        grid-template-columns:auto auto;
+        grid-template-areas:
+        "pagetitle pagetitle"
+        "pagedescr pagedescr"
+        "gl1 gl2"
+    }
+}
+
+@-webkit-keyframes gmlsit {
+    from {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  
+    50% {
+      -webkit-transform: scale3d(1.05, 1.05, 1.05);
+      transform: scale3d(1.05, 1.05, 1.05);
+    }
+  
+    to {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  
+  @keyframes gmlsit {
+    from {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  
+    50% {
+      -webkit-transform: scale3d(1.05, 1.05, 1.05);
+      transform: scale3d(1.05, 1.05, 1.05);
+    }
+  
+    to {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  
+  .gmlsit {
+    -webkit-animation-name: gmlsit;
+    animation-name: gmlsit;
+  }
+  
+  .gmlsitan {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count:infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }

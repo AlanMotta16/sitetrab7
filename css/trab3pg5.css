@@ -1,0 +1,200 @@
+/*page 5*/
+html{
+  background-color:black;
+}
+ul{
+  list-style:none;
+}
+.pg5{
+  background-image:url(../imgs/footerbackground.jpg);
+}
+.card{
+    height:auto;
+    text-align:center;
+    padding:5px;
+    border:1px solid black;
+    border-radius:10px;
+    background-image:linear-gradient(135deg, rgba(255, 0, 0, 0.722), rgba(255, 128, 0, 0.808));
+}
+.card:hover{
+    border:1px solid rgba(157, 0, 0, 0);
+    background-color:rgb(199, 199, 199);
+    color:white;
+}
+.card:hover .card-title{
+    border-radius:30px;
+    background-color:rgb(157, 0, 0);
+}
+.card:hover .card-text{
+    border-radius:30px;
+    background-color:rgb(236, 105, 24);
+}
+.card:hover .card-footer{
+  background-color:transparent;
+}
+.card-title, .card-text, .card-footer{
+  margin-top:5px;
+  padding:3px;
+}
+.card img{
+    border:3px solid rgb(157, 0, 0);
+    border-left:20px solid rgb(157, 0, 0);
+    border-right:20px solid rgb(157, 0, 0);
+}
+.card-title{
+    font-weight:bold;
+    font-size:x-large;
+}
+.selector{
+  background-color:transparent;
+}
+.pgt1{
+  grid-area:pt1;
+}
+.pgt2{
+  grid-area:pt2;
+}
+.pgt3{
+  grid-area:pt3;
+}
+.pgt4{
+  grid-area:pt4;
+}
+.pgt5{
+  grid-area:pt5;
+}
+.pgd1{
+  grid-area:pd1;
+}
+.pgd2{
+  grid-area:pd2;
+}
+.pgd3{
+  grid-area:pd3;
+}
+.pgd4{
+  grid-area:pd4;
+}
+.pgd5{
+  grid-area:pd5;
+}
+.carimgwrap{
+  background-color:rgb(8, 7, 32);
+}
+.act1, .act2, .sht, .rpg, .rac, .fgt{
+  display:flex;
+  flex-direction:row;
+  overflow-x:scroll;
+  overflow-y:hidden;
+}
+.act1{
+  grid-area:act1;
+}
+.act2{
+  grid-area:act2;
+}
+.sht{
+  grid-area:sht;
+}
+.rpg{
+  grid-area:rpg;
+}
+.rac{
+  grid-area:rac;
+}
+.fgt{
+  grid-area:fgt;
+}
+.galcont{
+  display:grid;
+  grid-template-areas:
+  "pt1"
+  "pd1"
+  "act1"
+  "act2"
+  "pt2"
+  "pd2"
+  "sht"
+  "pt3"
+  "pd3"
+  "rpg"
+  "pt4"
+  "pd4"
+  "rac"
+  "pt5"
+  "pd5"
+  "fgt"
+}
+@media (max-width:699px){
+  .card-title{
+    font-size:large;
+  }
+}
+
+@-webkit-keyframes flipInY {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0.5;
+  }
+
+  30% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    opacity: 1;
+  }
+
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+  }
+
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+
+@keyframes flipInY {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0.5;
+  }
+
+  30% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    opacity: 1;
+  }
+
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+    transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+  }
+
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+
+.flipInY {
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipInY;
+  animation-name: flipInY;
+}
+
+.animated:hover {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count:infinite;
+}

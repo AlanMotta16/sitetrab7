@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head> 
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Photo Gallery | Videogames | Alan's Tech Hub</title><meta charset="utf-8">
+      <link rel="stylesheet" type="text/css" href="../css/trab3.css">
+      <link rel="stylesheet" type="text/css" href="../css/trab3pg5.css">
+      <link rel="icon" type="image/x-icon" href="../imgs/myicon.jpg">
+      <style>@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');</style>
+      <style>@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');</style>
+      <style>@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');</style>
+      <style>@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');</style>
+      <style>@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');</style>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+      <header>
+        <div class="banner-grid">
+          <div class="banner-it">
+            <div class="banner-log bnlogan">
+              <img src="../imgs/logo.png" class="site-log" alt="Logo design by Alan Motta">
+            </div>
+            <div class="banner-tit bntitan">
+              <img src="../imgs/title.png" class="site-tit" alt="Site Title by Alan Motta">
+            </div>
+          </div>
+        </div>
+      </header>
+      <nav>
+        <div class="nav-cont">
+            <ul class="nav-ul">
+              <li class="nav-item nvitan dropdown">
+                <a class="navbar-brand dropdown-toggle" href="#" role="button">
+                  Select a Maker
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item nvitan drop-item" id="lambo">
+                    <img src="../imgs/dpad.png" alt="D-Pad design by Alan Motta" height="30" class="align-text-center">
+                    Lamborghini
+                  </li>
+                  <li class="nav-item nvitan drop-item">
+                    <a href="trab3pg4.html" class="nav-a">
+                      <img src="../imgs/dpad.png" alt="D-Pad design by Alan Motta" height="30" class="align-text-center">
+                      Games List
+                    </a>
+                  </li>
+                  <li class="nav-item nvitan drop-item">
+                    <a href="trab3pg5.html" class="nav-a">
+                      <img src="../imgs/dpad.png" alt="D-Pad design by Alan Motta" height="30" class="align-text-center">
+                      Gallery
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+        </div>
+      </nav>
+        <main class="pg5">
+          <div class="lamborghini" id="lambo">
+            <h1 class="text-center pagetitle" id="carname">Welcome!</h1><br>
+            <p class="text-center m-1 pagedescrlg" id="cardesc">
+              Hello, and welcome to CAAAARS, in connection with Alan's Tech Hub and Deivid Fortuna's FIPE API.
+               Just select a car manufacturer in the menu above, and see their highlighted cars and stats. Have a good time!
+            </p><br>
+            <div class="card-group">
+              <div class="card m-1 flipInY animated">
+                <div class="carimgwrap">
+                  <img src="../imgs/nfsunbound.jpg" class="card-img-top img-responsive" alt="..." id="car1img">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title" id="car1nam">Need for Speed Unbound</h5>
+                  <p class="card-text" id="car1des">"Race against time, outsmart the cops, and take on weekly qualifiers to reach The Grand, Lakeshore's ultimate street racing challenge. Pack your garage with precision-tuned, custom rides and light up the streets with your style, exclusive fits, and a vibrant global soundtrack that bumps in every corner of the world." -EA/Criterion Games</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted" id="car1prc">Xbox Series X|S, PS5, PC</small>
+                </div>
+              </div>
+              <div class="card m-1 flipInY animated">
+                <div class="carimgwrap">
+                  <img src="../imgs/gt7wd.jpg" class="card-img-top img-responsive" alt="..." id="car2img">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title" id="car2nam">Gran Turismo 7</h5>
+                  <p class="card-text" id="car2des">"Find your line with a staggering collection of game modes including fan-favorites like GT Campaign, Arcade and Driving School.
+                     In GT Simulation Mode, buy, tune and race your way through a rewarding solo campaign as you unlock new cars and challenges.
+                     With over 420 cars available, Gran Turismo 7 recreates the look and feel of classic motors and bleeding-edge supercars alike in unparalleled detail." -Sony/Polyphony Digital</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted" id="car2prc">PS4, PS5</small>
+                </div>
+              </div>
+              <div class="card m-1 flipInY animated">
+                <div class="carimgwrap">
+                  <img src="../imgs/forzahorizon5wd.jpg" class="card-img-top img-responsive" alt="..." id="car3img">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title" id="car3nam">Forza Horizon 5</h5>
+                  <p class="card-text" id="car3des">"Your Ultimate Horizon Adventure awaits! Explore the vibrant and ever-evolving open world landscapes of Mexico with limitless, fun driving action in hundreds of the world’s greatest cars." - Microsoft/Playground Studios</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted" id="car3prc">Xbox One, Xbox Series X|S, PC</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <script>
+            async function pegacarro(){
+              const url1="https://parallelum.com.br/fipe/api/v1/carros/marcas";
+              let resposta1=await fetch(url1);
+              let js1=await resposta1.json();
+              const url2="https://parallelum.com.br/fipe/api/v1/carros/marcas/171/modelos";
+              let resposta2=await fetch(url2);
+              let js2=await resposta2.json();
+              const url31="https://parallelum.com.br/fipe/api/v1/carros/marcas/171/modelos/5378/anos/2010-1";
+              let resposta31=await fetch(url31);
+              let js31=await resposta31.json();
+              const url32="https://parallelum.com.br/fipe/api/v1/carros/marcas/171/modelos/8083/anos/2019-1";
+              let resposta32=await fetch(url32);
+              let js32=await resposta32.json();
+              const url33="https://parallelum.com.br/fipe/api/v1/carros/marcas/171/modelos/8545/anos/2022-1";
+              let resposta33=await fetch(url33);
+              let js33=await resposta33.json();
+              document.querySelector("#lambo").addEventListener('click',()=>{marc1()});
+              function marc1(){
+                const name=document.querySelector("#carname");
+                name.innerHTML=js1[50].nome;
+                const descr=document.querySelector("#cardesc");
+                descr.innerHTML="Automobili Lamborghini S.p.A. is an Italian brand and manufacturer of luxury sports cars and SUVs based in Sant'Agata Bolognese. The company is owned by the Volkswagen Group through its subsidiary Audi. Ferruccio Lamborghini (1916–1993), an Italian manufacturing magnate, founded Automobili Ferruccio Lamborghini S.p.A. in 1963 to compete with Ferrari. The company was noted for using a rear mid-engine, rear-wheel drive layout. Lamborghini grew rapidly during its first decade, but sales plunged in the wake of the 1973 worldwide financial downturn and the oil crisis. The firm's ownership changed three times after 1973, including a bankruptcy in 1978. American Chrysler Corporation took control of Lamborghini in 1987 and sold it to Malaysian investment group Mycom Setdco and Indonesian group V'Power Corporation in 1994. In 1998, Mycom Setdco and V'Power sold Lamborghini to the Volkswagen Group where it was placed under the control of the group's Audi divisionNew products and model lines were introduced to the brand's portfolio and brought to the market and saw an increased productivity for the brand. In the late 2000s, during the worldwide financial crisis and the subsequent economic crisis, Lamborghini's sales saw a drop of nearly 50 per cent.Lamborghini currently produces the V12-powered Aventador and the V10-powered Huracán, along with the Urus SUV powered by a twin-turbo V8 engine. In addition, the company produces V12 engines for offshore powerboat racing."
+                const car1img=document.querySelector("#car1img");
+                car1img.src="../imgs/lambo1.png";
+                const car1nam=document.querySelector("#car1nam");
+                car1nam.innerHTML=js2.modelos[11].nome;
+                const car1des=document.querySelector("#car1des");
+                car1des.innerHTML="- Horsepower: 560 hp<br>- 0-100 km/h: 4 s<br>- Trunk: 110 l";
+                const car1prc=document.querySelector("#car1prc");
+                car1prc.innerHTML=js31.Valor;
+                const car2img=document.querySelector("#car2img");
+                car2img.src="../imgs/lambo2.png";
+                const car2nam=document.querySelector("#car2nam");
+                car2nam.innerHTML=js2.modelos[4].nome;
+                const car2des=document.querySelector("#car2des");
+                car2des.innerHTML="- Horsepower: 740 hp<br>- 0-100 km/h: 2.9 s<br>- Trunk: 140 l";
+                const car2prc=document.querySelector("#car2prc");
+                car2prc.innerHTML=js32.Valor;
+                const car3img=document.querySelector("#car3img");
+                car3img.src="../imgs/lambo3.png";
+                const car3nam=document.querySelector("#car3nam");
+                car3nam.innerHTML=js2.modelos[20].nome;
+                const car3des=document.querySelector("#car3des");
+                car3des.innerHTML="- Horsepower: 650 hp<br>- 0-100 km/h: 3.6 s<br>- Trunk: 616 l";
+                const car3prc=document.querySelector("#car3prc");
+                car3prc.innerHTML=js33.Valor;
+              }
+              console.log(js1);
+              console.log(js2);
+              console.log(js31);
+              console.log(js32);
+              console.log(js33);
+            }
+            pegacarro();
+            /*
+            async function pegacarro(){
+                const car = document.querySelector("#lambo");
+                const url = 'https://parallelum.com.br/fipe/api/v1/carros/marcas';
+                let resposta = await fetch(url);
+                let js = await resposta.json();
+const car1img=document.createElement("img");
+                car1img.src="../imgs/lambo1.jpg";
+                document.querySelector("#car1img").appendChild(car1img);
+                car.innerHTML = js[50].nome;
+
+                console.log(js);
+              }
+              pegacarro();
+              */
+          </script>
+          <!--
+          <div class="galcont">
+            <div>
+              <h1 class="pgt1 pagetitle">ACTION-ADVENTURE GAMES</h1>
+            </div>
+            <div>
+              <p class="pgd1 pagedescr">
+                Action adventure games are like RPGs, but you don't have as much customization. They usually have really big maps and lots of collectibles.
+              </p>
+            </div>
+            <div class="act1">
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/grand-theft-auto-v" target="_blank">
+                    <img src="../imgs/gtavsm.jpg" class="img-fluid" alt="GTA V, 2018"/>
+                  </a>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">GRAND THEFT AUTO V</h5>
+                  <p class="card-text">2013</p>
+                </div>
+                <div class="card-footer">
+                  <small>Xbox 360, Xbox One, Xbox Series X|S, PS3, PS4, PS5</small>
+                </div>
+              </div>
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/minecraft" target="_blank">
+                    <img src="../imgs/minecraftsm.png" class="img-fluid" alt="Minecraft, 2009"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">MINECRAFT</h5>
+                  <p class="card-text">2009</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Xbox 360, Xbox One, PS3, PS4, Switch</small>
+                </div>
+              </div>
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/the-witcher-3-wild-hunt" target="_blank">
+                    <img src="../imgs/witcher3sm.jpg" class="img-fluid" alt="The Witcher 3, 2015"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">THE WITCHER 3: WILD HUNT</h5>
+                  <p class="card-text">2015</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Xbox One, Xbox Series X|S, PS4, PS5, Switch</small>
+                </div>
+              </div>
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/red-dead-redemption-2" target="_blank">
+                    <img src="../imgs/reddead2sm.jpg" class="img-fluid" alt="Red Dead Redemption 2, 2018"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">RED DEAD REDEMPTION 2</h5>
+                  <p class="card-text">2018</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Xbox One, PS4</small>
+                </div>
+              </div>
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/god-of-war" target="_blank">
+                    <img src="../imgs/godofwar2018sm.jpg" class="img-fluid" alt="God of War, 2018"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">GOD OF WAR</h5>
+                  <p class="card-text">2018</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">PS4</small>
+                </div>
+              </div>
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/batman-arkham-knight" target="_blank">
+                    <img src="../imgs/arkhamknightsm.jpg" class="img-fluid" alt="Batman: Arkham Knight, 2015"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">BATMAN: ARKHAM KNIGHT</h5>
+                  <p class="card-text">2015</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Xbox One, PS4</small>
+                </div>
+              </div>
+            </div>
+            <div class="act2">
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/the-last-of-us" target="_blank">
+                    <img src="../imgs/lastofussm.jpg" class="img-fluid" alt="The Last of Us, 2013"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">THE LAST OF US</h5>
+                  <p class="card-text">2013</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">PS3, PS4</small>
+                </div>
+              </div>
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/uncharted-4" target="_blank">
+                    <img src="../imgs/uncharted4sm.jpg" class="img-fluid" alt="Uncharted 4, 2016"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">UNCHARTED 4: A THIEF'S END</h5>
+                  <p class="card-text">2016</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">PS4</small>
+                </div>
+              </div>
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/star-wars-jedi-fallen-order" target="_blank">
+                    <img src="../imgs/fallenordersm.jpg" class="img-fluid" alt=" Star Wars Jedi: Fallen Order, 2019"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">STAR WARS JEDI: FALLEN ORDER</h5>
+                  <p class="card-text">2019</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Xbox One, Xbox Series X|S, PS4, PS5</small>
+                </div>
+              </div>
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/assassins-creed-valhalla" target="_blank">
+                    <img src="../imgs/asscreedvalhallasm.jpg" class="img-fluid" alt="Assassin's Creed Valhalla, 2020"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">ASSASIN'S CREED: VALHALLA</h5>
+                  <p class="card-text">2020</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Xbox One, Xbox Series X|S, PS4, PS5</small>
+                </div>
+              </div>
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/tomb-raider" target="_blank">
+                    <img src="../imgs/tombraidersm.jpg" class="img-fluid" alt="Tomb Raider, 2013"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">TOMB RAIDER</h5>
+                  <p class="card-text">2013</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Xbox 360, PS3</small>
+                </div>
+              </div>
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/the-legend-of-zelda-breath-of-the-wild" target="_blank">
+                    <img src="../imgs/breathofthewildsm.jpg" class="img-fluid" alt="Breath of the Wild, 2017"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">THE LEGEND OF ZELDA: BREATH OF THE WILD</h5>
+                  <p class="card-text">2017</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Switch</small>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h1 class="pgt2 pagetitle">SHOOTER GAMES</h1>
+            </div>
+            <div>
+              <p class="pgd2 pagedescr">
+                Shooter games used to be PC-only games, until Halo came out, and it became common on consoles.
+                 They can either have a campaign and some multiplayer, or be battle royale (which is based only on online play).
+              </p>
+            </div>
+            <div class="sht">
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/counter-strike-global-offensive" target="_blank">
+                    <img src="../imgs/csgosm.jpg" class="img-fluid" alt="CS:GO, 2012"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">COUNTER-STRIKE: GLOBAL OFFENSIVE</h5>
+                  <p class="card-text">2012</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Xbox 360, PS3</small>
+                </div>
+              </div>
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/halo-infinite" target="_blank">
+                    <img src="../imgs/haloinfinitesm.jpg" class="img-fluid" alt="Halo Infinite, 2021"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">HALO INFINITE</h5>
+                  <p class="card-text">2021</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Xbox One, Xbox Series X|S</small>
+                </div>
+              </div>
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/gears-5" target="_blank">
+                    <img src="../imgs/gears5sm.jpg" class="img-fluid" alt="Gears 5, 2019"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">GEARS 5</h5>
+                  <p class="card-text">2019</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Xbox One, Xbox Series X|S</small>
+                </div>
+              </div>
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/fortnite" target="_blank">
+                    <img src="../imgs/fortnitesm.jpg" class="img-fluid" alt="Fortnite, 2017"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">FORTNITE</h5>
+                  <p class="card-text">2017</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Xbox One, Xbox Series X|S, PS4, PS5</small>
+                </div>
+              </div>
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/call-of-duty-vanguard" target="_blank">
+                    <img src="../imgs/callofdutyvanguardsm.jpg" class="img-fluid" alt="COD: Vanguard, 2021"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">CALL OF DUTY: VANGUARD</h5>
+                  <p class="card-text">2021</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Xbox One, Xbox Series X|S, PS4, PS5</small>
+                </div>
+              </div>
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/borderlands" target="_blank">
+                    <img src="../imgs/borderlandssm.jpg" class="img-fluid" alt="Borderlands, 2009"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">BORDERLANDS</h5>
+                  <p class="card-text">2009</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Xbox 360, PS3</small>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h1 class="pgt3 pagetitle"> RPG GAMES</h1>
+            </div>
+            <div>
+              <p class="pgd3 pagedescr">
+                RPG games are mostly singleplayer, online sometimes having online elements. Their main feature is that you play as a certain role.
+                 It's common to have a lot of customization for your look and habilities.
+              </p>
+            </div>
+            <div class="rpg">
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/elden-ring" target="_blank">
+                    <img src="../imgs/eldenringsm.jpg" class="img-fluid" alt="Elden Ring, 2022"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">ELDEN RING</h5>
+                  <p class="card-text">2022</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Xbox One, Xbox Series X|S, PS4, PS5</small>
+                </div>
+              </div>
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/the-elder-scrolls-v-skyrim" target="_blank">
+                    <img src="../imgs/skyrimsm.png" class="img-fluid" alt="Skyrim, 2011"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">THE ELDER SCROLLS V: SKYRIM</h5>
+                  <p class="card-text">2011</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Xbox 360, Xbox One, Xbox Series X|S, PS3, PS4, PS5, Switch</small>
+                </div>
+              </div>
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/mass-effect" target="_blank">
+                    <img src="../imgs/masseffectsm.jpg" class="img-fluid" alt="Mass Effect, 2007"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">MASS EFFECT</h5>
+                  <p class="card-text">2007</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Xbox 360, PS3</small>
+                </div>
+              </div>
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/final-fantasy-xv" target="_blank">
+                    <img src="../imgs/finalfantasyxvsm.jpg" class="img-fluid" alt="Final Fantasy XV, 2016"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">FINAL FANTASY XV</h5>
+                  <p class="card-text">2016</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Xbox One, PS4</small>
+                </div>
+              </div>
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/persona-5-the-royal" target="_blank">
+                    <img src="../imgs/persona5royalsm.jpg" class="img-fluid" alt="Persona 5 Royal, 2020"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">PERSONA 5 ROYAL</h5>
+                  <p class="card-text">2020</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">PS4</small>
+                </div>
+              </div>
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/hades" target="_blank">
+                    <img src="../imgs/hadessm.jpg" class="img-fluid" alt="Hades, 2018"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">HADES</h5>
+                  <p class="card-text">2018</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Xbox One, Xbox Series X|S, PS4, PS5, Switch</small>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h1 class="pgt4 pagetitle">SPORTS & RACING GAMES</h1>
+            </div>
+            <div>
+              <p class="pgd4 pagedescr">
+                Sports and Racing games are usually more casual, good for a quick match with your friends.
+                 Sports games have a lot of Esports competitions, and racing games can be beautiful simulation games.
+              </p>
+            </div>
+            <div class="rac">
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/fifa-22" target="_blank">
+                    <img src="../imgs/fifa22sm.jpg" class="img-fluid" alt="Fifa 22, 2021"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">FIFA 22</h5>
+                  <p class="card-text">2021</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Xbox One, Xbox Series X|S, PS4, PS5</small>
+                </div>
+              </div>
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/forza-horizon-5" target="_blank">
+                    <img src="../imgs/forzahorizon5sm.jpg" class="img-fluid" alt="Forza Horizon 5, 2021"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">FORZA HORIZON 5</h5>
+                  <p class="card-text">2021</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Xbox One, Xbox Series X|S</small>
+                </div>
+              </div>
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/gran-turismo-7" target="_blank">
+                    <img src="../imgs/gt7sm.jpg" class="img-fluid" alt="GT7, 2022"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">GRAN TURISMO 7</h5>
+                  <p class="card-text">2022</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">PS4, PS5</small>
+                </div>
+              </div>
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/mario-kart-8-deluxe" target="_blank">
+                    <img src="../imgs/mariokart8dlxsm.jpg" class="img-fluid" alt="Mario Kart 8 Deluxe, 2017"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">MARIO KART 8 DELUXE</h5>
+                  <p class="card-text">2017</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Switch</small>
+                </div>
+              </div>
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/madden-nfl-22-next-gen" target="_blank">
+                    <img src="../imgs/madden22sm.jpg" class="img-fluid" alt="Madden 22, 2021"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">MADDEN NFL 22</h5>
+                  <p class="card-text">2021</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Xbox One, Xbox Series X|S, PS4, PS5</small>
+                </div>
+              </div>
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/nba-2k22-next-gen-version" target="_blank">
+                    <img src="../imgs/nba2k22sm.jpg" class="img-fluid" alt="NBA 2K22, 2021"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">NBA 2K22</h5>
+                  <p class="card-text">2021</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Xbox One, Xbox Series X|S, PS4, PS5</small>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h1 class="pgt5 pagetitle">FIGHTING GAMES</h1>
+            </div>
+            <div>
+              <p class="pgd5 pagedescr">
+                Fighting games used to be super popular in arcades, but now are pretty much everywhere.
+                 You usually have to use calculated and well-timed attacks to create combos, unless it's a brawler where you can button mash.
+              </p>
+            </div>
+            <div class="fgt">
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/mortal-kombat-11" target="_blank">
+                    <img src="../imgs/mk11sm.jpg" class="img-fluid" alt="Mortal Kombat 11, 2019"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">MORTAL KOMBAT 11</h5>
+                  <p class="card-text">2019</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Xbox One, Xbox Series X|S, PS4, PS5</small>
+                </div>
+              </div>
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/super-smash-bros-ultimate" target="_blank">
+                    <img src="../imgs/supersmashbrosultsm.jpg" class="img-fluid" alt="Super Smash Bros Ultimate, 2018"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">SUPER SMASH BROS ULTIMATE</h5>
+                  <p class="card-text">2018</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Switch</small>
+                </div>
+              </div>
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/street-fighter-5" target="_blank">
+                    <img src="../imgs/streetfightervsm.jpg" class="img-fluid" alt="Street Fighter V, 2016"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">STREET FIGHTER V</h5>
+                  <p class="card-text">2016</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">PS4</small>
+                </div>
+              </div>
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/injustice-2" target="_blank">
+                    <img src="../imgs/injustice2sm.jpg" class="img-fluid" alt="Injustice 2, 2017"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">INJUSTICE 2</h5>
+                  <p class="card-text">2017</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Xbox One, PS4</small>
+                </div>
+              </div>
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/sifu" target="_blank">
+                    <img src="../imgs/sifusm.jpg" class="img-fluid" alt="Sifu, 2022"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">SIFU</h5>
+                  <p class="card-text">2022</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">PS4, PS5</small>
+                </div>
+              </div>
+              <div class="card flipInY animated">
+                <figure>
+                  <a href="https://www.ign.com/games/wwe-2k22" target="_blank">
+                    <img src="../imgs/wwe2k22sm.jpg" class="img-fluid" alt="WWE 2K22, 2022"/>
+                  </a>
+                  <figcaption></figcaption>
+                </figure> 
+                <div class="card-body">
+                  <h5 class="card-title">WWE 2K22</h5>
+                  <p class="card-text">2022</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Xbox One, Xbox Series X|S, PS4, PS5</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        -->
+        </main>       
+        <footer>
+            <div class="footer">
+                <a href="https://github.com/AlanMotta16" class="footitem ftitan" target="_blank">
+                  <div>
+                    <img src="../imgs/dpadsm.png" alt="D-Pad design by Alan Motta">
+                    Developer Github
+                  </div>
+                </a>
+                <a href="https://deividfortuna.github.io/fipe/" class="footitem ftitan" target="_blank">
+                  <div>
+                    <img src="../imgs/dpadsm.png" alt="D-Pad design by Alan Motta">
+                    API Site
+                  </div>
+                </a>
+                <a href="https://alanmotta16.github.io/ArcadeRacer2/html/forzahorizon6.html" class="footitem ftitan" target="_blank">
+                  <div>
+                    <img src="../imgs/dpadsm.png" alt="D-Pad design by Alan Motta">
+                    Arcade Racer 2
+                  </div>
+                </a>
+                <a href="https://alanmotta16.github.io/sitetrab5/html/trab3pgmain.html" class="footitem ftitan" target="_blank">
+                  <div>
+                    <img src="../imgs/dpadsm.png" alt="D-Pad design by Alan Motta">
+                    Alan's Tech Hub
+                  </div>
+                </a>
+            </div>
+      </footer>
+    </body>
+</html>

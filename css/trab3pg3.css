@@ -1,0 +1,335 @@
+/*page 3*/
+/*observations:
+    -center and resize video better
+    -fix weird row spacing
+*/
+.pg3{
+    background-image:url(../imgs/vdgbackground.jpg);
+}
+.xbox, .ps, .ntd{
+    padding:5px;
+    font-family: 'Play', sans-serif;
+    font-size:20px;
+    display:flex;
+    align-items:center;
+}
+.xbox{
+    background-image:linear-gradient(135deg, white, green);
+}
+.ps{
+    background-image:linear-gradient(135deg, white, rgb(33, 96, 253));
+}
+.ntd{
+    background-image:linear-gradient(135deg, rgb(0, 191, 255), red);
+}
+.xbtit, .pstit, .nttit{
+    margin:5px;
+    text-align:center;
+}
+.xbdes, .psdes, .ntdes{
+    padding:5px;
+    border:1px solid rgba(0, 0, 0, 0);
+    margin:5px;
+    background-color:rgba(255, 255, 255, 0);
+    text-indent:50px;
+    text-align:justify;
+}
+.xbsx, .xbss, .ps5, .ntdsw{
+    padding:5px;
+    border:1px solid rgba(0, 0, 0, 0);
+    background-color:rgba(255, 255, 255, 0);
+    text-align:right;
+}
+.pg3 iframe{
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+.xbox iframe{
+    border:15px outset green;
+}
+.ps iframe{
+    border:15px outset rgb(0, 72, 255);
+}
+.ntd iframe{
+    border:15px outset rgb(255, 0, 0);
+}
+.xbox h2{
+    border:3px solid black;
+    margin:5px;
+    background-color:white;
+    text-align:center;
+    color:green;
+    border-radius:25px;
+}
+.xbox h2:hover{
+    background-color:black;
+    color:white;
+}
+.xbox a{
+    color:green;
+}
+.xbox a:visited{
+    color:rgb(0, 45, 0);
+}
+.ps h2{
+    border:3px solid black;
+    margin:5px;
+    text-align:center;
+    color:rgb(0, 72, 255);
+    border-radius:25px;
+}
+.ps h2:hover{
+    background-color:black;
+    color:white;
+}
+.ps a{
+    color:rgb(0, 72, 255);
+}
+.ps a:visited{
+    color:rgb(0, 21, 75);
+}
+.ntd h2{
+    border:3px solid rgb(0, 191, 255);
+    margin:5px;
+    text-align:center;
+    color:rgb(255, 0, 0);
+    border-radius:25px;
+}
+.ntd h2:hover{
+    border:3px solid rgb(139, 0, 0);
+    background-color:rgb(0, 191, 255);
+    color:black;
+}
+.ntd a{
+    color:rgb(255, 0, 0);
+}
+.ntd a:visited{
+    color:rgb(108, 0, 0);
+}
+.rev{
+    font-size:x-large;
+}
+.xbox a, .ps a, .ntd a{
+    padding:5px;
+    border-radius:30px;
+    background-color:rgb(205, 205, 205);
+}
+.xbox h3, .ps h3, .ntd h3{
+    font-weight:bolder;
+}
+.xbox h3:first-letter, .ps h3:first-letter, .ntd h3:first-letter{
+    font-size:90px;
+}
+.rev{
+    font-style:italic;
+}
+.xbtit{
+  grid-area:xbtit;
+  text-align:center;
+  color:green;
+  background-color:black;
+}
+.xbdes{
+  grid-area:xbdes;
+}
+.xbsx{
+  grid-area:xbsx;
+}
+.xbsxvid{
+  grid-area:xbsxvid;
+}
+.xbsxrev{
+  grid-area:xbsxrev;
+}
+.xbss{
+  grid-area:xbss;
+}
+.xbssvid{
+  grid-area:xbssvid;
+}
+.xbssrev{
+  grid-area:xbssrev;
+}
+.pstit{
+  grid-area:pstit;
+  text-align:center;
+  color:rgb(0, 72, 255);
+  background-color:black;
+}
+.psdes{
+  grid-area:psdes;
+}
+.ps5{
+  grid-area:ps5;
+}
+.ps5vid{
+  grid-area:ps5vid;
+}
+.ps5rev{
+  grid-area:ps5rev;
+}
+.nttit{
+  grid-area:nttit;
+  border:1px solid rgb(0, 191, 255);
+  text-align:center;
+  color:rgb(200, 0, 0);
+  background-color:rgb(0, 191, 255);
+}
+.ntdes{
+  grid-area:ntdes;
+}
+.ntsw{
+  grid-area:ntsw;
+}
+.ntswvid{
+  grid-area:ntswvid;
+}
+.ntswrev{
+  grid-area:ntswrev;
+}
+.xbox, .ps, .ntd{
+  display:grid;
+  max-width:100%;
+  gap:10px;
+  grid-template-areas:
+  "xbtit"
+  "xbdes"
+  "xbsx"
+  "xbsxvid"
+  "xbsxrev"
+  "xbss"
+  "xbssvid"
+  "xbssrev"
+  "pstit"
+  "psdes"
+  "ps5"
+  "ps5vid"
+  "ps5rev"
+  "nttit"
+  "ntdes"
+  "ntsw"
+  "ntswvid"
+  "ntswrev"
+}
+@media (min-width:700px){
+  .xbox, .ps, .ntd{
+    display:grid;
+    row-gap:10px;
+    column-gap:40px;
+    grid-template-columns:1fr 4fr;
+    grid-template-areas:
+    "xbtit xbtit"
+    "xbdes xbdes"
+    "xbsx xbsx"
+    "xbsxvid xbsxrev"
+    "xbss xbss"
+    "xbssvid xbssrev"
+    "pstit pstit"
+    "psdes psdes"
+    "ps5 ps5"
+    "ps5vid ps5rev"
+    "nttit nttit"
+    "ntdes ntdes"
+    "ntsw ntsw"
+    "ntswvid ntswrev"
+  }
+}
+
+@-webkit-keyframes revsc {
+  from, 20%, 40%, 60%, 80%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    -webkit-transform: scale3d(0.97, 0.97, 0.97);
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes revsc {
+  from, 20%, 40%, 60%, 80%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0.75;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    -webkit-transform: scale3d(0.97, 0.97, 0.97);
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.revsc {
+  -webkit-animation-duration: 0.75s;
+  animation-duration: 0.75s;
+  -webkit-animation-name: revsc;
+  animation-name: revsc;
+}
+
+.revscan {
+  -webkit-animation-duration: 5s;
+  animation-duration: 5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count:infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+}
