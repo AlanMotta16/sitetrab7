@@ -65,7 +65,8 @@ nav{
 }
 .drop-item{
   font-size:x-large;
-  display:block;
+  display:flex;
+  justify-content:center;
 }
 .drop-item:hover{
   cursor:pointer;

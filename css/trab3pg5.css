@@ -21,6 +21,9 @@ ul{
     background-color:rgb(199, 199, 199);
     color:white;
 }
+.card img{
+  padding:5px;
+}
 .card:hover .card-title{
     border-radius:30px;
     background-color:rgb(157, 0, 0);
